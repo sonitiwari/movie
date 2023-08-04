@@ -11,12 +11,12 @@ object movie1 extends App{
   Logger.getLogger("org").setLevel(Level.ERROR)
   val sparkConf = new SparkConf()
   sparkConf.set("spark.app.name", "kaf")
-  sparkConf.set("spark.master", "local[*]")
+  //sparkConf.set("spark.master", "local[*]")
 
   val spark=SparkSession.builder().config(sparkConf).getOrCreate()
   import spark.implicits
   val df = spark.read.option("header", true).option("inferschema", true).csv("/user/ec2-user/junbatch/sonika/topmovie.csv")
-  df.show()
+  df.show(5)
 
 
 }
