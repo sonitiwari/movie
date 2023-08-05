@@ -11,7 +11,7 @@ object movie1 extends App{
   Logger.getLogger("org").setLevel(Level.ERROR)
   val sparkConf = new SparkConf()
   sparkConf.set("spark.app.name", "kaf")
-  sparkConf.set("spark.master", "local[1]")
+  //sparkConf.set("spark.master", "local[1]")
 
   val spark=SparkSession.builder().config(sparkConf).getOrCreate()
   import spark.implicits
